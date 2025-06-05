@@ -1,4 +1,4 @@
-#simple binary search algorithm practice
+#simple binary search algorithm practice ( searching though a ordered array of user defined size) 
 
 def binarySearch(low, high, target, array):  # assuming an ordered array of integers
     mid = int((low + high) /2)
