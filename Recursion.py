@@ -97,8 +97,18 @@ class DoubleLinkedList:  # double linked list
     def __init__(self):  # create class for objects to store the head & tail nodes
         self.head = self.tail = None
 
-    # def reverse(self): #reverse dll
-    # fill in here
+    def reverse(self):  # reverse dll
+        head = self.head
+        tail = self.tail
+        current = head
+        if head is None:  # if the head is empty
+            print("empty")
+        else:
+            while current:  # flipping the pointers, no need to move any nodes
+                current.next, current.prev = current.prev, current.next
+                current = current.prev
+            self.head, self.tail = self.tail, self.head  # visually less clear for me, but useful swapping strat
+            # return head
 
     def append(self, element):  # append dll
         # fill in here
@@ -110,21 +120,131 @@ class DoubleLinkedList:  # double linked list
             self.tail.next = new
             self.tail = new
 
-    # def remove(self):#remove dll
-    # fill in here
+    def removeElement(self, element):  # remove dll
+        head = self.head
+        if head is None:
+            return "empty"
+        else:
+            while head:
+                if head.element == element:
+                    head.prev.next = head.next
+                    head.next.prev = head.prev
+                    break
+                head = head.next
 
-    # def insertFirst(self,element):#insert into dll
-    # fill in here
+    def contain(self, element):
+        if self.head is None:
+            return False
+        else:
+            current = self.head
+            while current:
+                if current.element == element:
+                    return True
+                current = current.next
+            return False  # when it doesn't have the specified element
+
+    def RemovePosition(self, pos):
+        head = self.head
+        if head is None:
+            return "empty"
+        else:
+            for i in range(pos):
+                if head.next is None:
+                    return "list is too small for that"
+                head.prev.next = head.next
+                head.next.prev = head.prev
+                break
+
+    def insertFirst(self, element):  # insert into dll
+        head = self.head
+        new = Node(element)
+        if head is None:
+            self.append(element)
+        else:
+            # new.prev = None
+            new.next = head
+            head.prev = new
+            self.head = new
+
+    def insertAt(self, pos, element):  # insertAt, pos starts at 0
+        head = self.head
+        new = Node(element)
+        if head is None:
+            self.append(element)
+        else:
+            if pos == 0:
+                self.insertFirst(element)
+            else:
+                for i in range(pos):
+                    if head.next is None:
+                        return "list is too small for that"
+                    head = head.next
+                if (head is self.tail):
+                    self.append(element)
+                else:
+                    prev = head.prev
+                    new.next = head
+                    new.prev = head.prev
+                    prev.next = new
+                    head.prev = new
+
+    def right2Left(self):  # TraverseRight2Left
+        tail = self.tail
+        if tail is None:
+            print("empty")
+        else:
+            current = tail
+            a = []
+            while (current.prev):
+                a.append(current.element)
+            return " ".join(a)
+
+    def size(self):  # size
+        head = self.head
+        size = 0
+        if head is None:
+            return size
+        else:
+            current = head
+            while (current):
+                size += size
+            return size
 
     # def combine(self, second):#combine dll's
     # fill in here
+
+    def fill(self):  # to ease the testing a bit
+        choice = int(input("do you want to 1: manually outline or 2: get testing one: "))
+        if choice == 1:
+            min1 = int(input("Enter the MIN size of the new DLL: "))
+            max1 = int(input("Enter the MAX size of the new DLL: "))
+            min2 = int(input("Enter the MIN possible # for the new DLL: "))
+            max2 = int(input("Enter the MAX possible # for the new DLL: "))
+            for i in range(random.randint(min2, max2)):  # create a DLL & print out its initial values
+                self.append(random.randint(min2, max2))  # random, unordered
+        else:  # being lazy here, no need for input validation
+            for i in range(10):
+                self.append(i)
+
+    def print(self):  # print the DLL, to ease the testing a bit too
+        head = self.head
+        if head is None:
+            return "empty"
+        current = head
+        print("")  # for the newline
+        while current:
+            print(current.element, end=" | ")
+            current = current.next
+
+    # read & fill from a file
+    # write to a file
 
     def bubbleSort(self):  # bubblesort dll
         # fill in here
         head = self.head
         tail = self.tail
         if head is None:  # empty list
-            return
+            return "empty"
         else:
             # sort by element values
             last = None
@@ -157,18 +277,14 @@ class DoubleLinkedList:  # double linked list
 
 # testing out the DLL
 k = DoubleLinkedList()
-for i in range(10):  # create a DLL & print out its initial values
-    k.append(random.randint(0, 20))  # random, unordered
-    # k.append(10-i) # reverse order
-    # print(k.head.element, end="| ")
-    # print(k.tail.element)
-    print(k.tail.element, end="| ")
-
-print("")
-current = k.bubbleSort()
-for n in range(10):
-    print(current.element, end="| ")
-    current = current.next
+k.fill()
+# k.bubbleSort()
+# k.print()
+# k.reverse()
+# k.print()
+# k.insertAt(0, 9999)
+# k.insertFirst(8888)
+k.print()
 
 # end of DLL =======================================================================================
 # ==================================================================================================
