@@ -1,3 +1,5 @@
+#not to be taken seriously, this is just me trying to impliment the basics & get used to some of the keywords & syntax used in python
+
 # all the dope imports
 import random, numpy, pandas
 
