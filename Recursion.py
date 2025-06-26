@@ -352,7 +352,7 @@ class LinkedQueue:  # basically the same as the stack but using head instead of 
 
 class TreeNode:
     def __init__(self, element):
-        self.left = self.right = None  # added for Trees
+        self.left = self.right = self.parent = None  # added for Trees
         self.element = element
 
 
@@ -478,11 +478,4 @@ class BinaryTree:  # had to create seperately from the DLL and SLL
 # practice methods for using the "parent" pointer in a tree node class to find common ancestors and such
 # hash tables
 # priority queue : basically have another element for priority in the node to sort the queue by
-# Key value binary tree
-# searching through numeric binary search trees & non-numeric ones to find specified nodes
-# red/black binary tree
-# printing out binary trees wih queues
-# printing binary trees recursively ( in different orders)
-# practice methods for using the "parent" pointer in a tree node class to find common ancestors and such
-# hash tables
-# priority queue : basically have another element for priority in the node to sort the queue by
+
