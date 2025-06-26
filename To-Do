@@ -1,0 +1,17 @@
+# to-do :
+# Array work
+# tree traversal
+# depth of a node
+# height of a tree
+# trie
+# adjacent list /adjacent matrix
+# Key value binary tree
+# searching through numeric binary search trees & non-numeric ones to find specified nodes
+# red/black binary tree
+# printing out binary trees wih queues
+# printing binary trees recursively ( in different orders)
+# practice methods for using the "parent" pointer in a tree node class to find common ancestors and such
+# hash tables
+# priority queue : basically have another element for priority in the node to sort the queue by
+# look into cuda cones for ML, parallel processing, and the linear algebra behind the node tuning for ML
+#Quicksort algortithm
