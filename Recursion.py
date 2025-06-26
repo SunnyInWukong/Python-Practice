@@ -433,27 +433,56 @@ class BinaryTree:  # had to create seperately from the DLL and SLL
             return left
         return right  # if the left is empty, return the right
 
-    #add root
-    #create ordered tree with specified number of nodes (left to right 1 - 2, 3. 2- 4, 5. 3 - 6, 7. etc.
-    #delete a node
-    #replace a node
-    #print out (left to right, depth first)
-    #print out (left to right, breadth first)
-    #sort (largest on top)
+    def addRoot(self, element):  # add root
+        if (self.root is None):
+            node = self.tn(element)
+            self.root = node
+            return
+        print("There is Already a Root Node")
 
+    def numTreeFromFile(self, fileName):  # build a numeric binary tree from numbers in a .csv file
+        a = 10
+        # parse through a .csv file, with the tree values, and make a sorted binary tree
 
+    def kpTreeFromFile(self, fileName):  # build a key-value binary tree from values in a file
+        # might want to create a record class for the key/value pair instead of editing the treenode class
+        a = 10
+    def levelOrderTraversal(self, tn): # print the level order traversal of the tree
+        #simple 'tree traversal using queues' pracice here
+        a = 10
+
+    # create ordered tree with specified number of nodes (left to right 1 - 2, 3. 2- 4, 5. 3 - 6, 7. etc.
+    # delete a node
+    # replace a node
+    # print out (left to right, depth first)
+    # print out (left to right, breadth first)
+    # sort (largest on top)
 
 # end of BinaryTree ================================================================================
 # ==================================================================================================
 
 
 # to-do :
-# priority queue : basically have another element for priority in the node to sort the queue by
 # Array work
 # tree traversal
 # depth of a node
 # height of a tree
 # trie
-# binary search trees
 # adjacent list /adjacent matrix
 # making a class in another file to import to in this one, maybe for expanding the element in the nodes or something
+# Key value binary tree
+# searching through numeric binary search trees & non-numeric ones to find specified nodes
+# red/black binary tree
+# printing out binary trees wih queues
+# printing binary trees recursively ( in different orders)
+# practice methods for using the "parent" pointer in a tree node class to find common ancestors and such
+# hash tables
+# priority queue : basically have another element for priority in the node to sort the queue by
+# Key value binary tree
+# searching through numeric binary search trees & non-numeric ones to find specified nodes
+# red/black binary tree
+# printing out binary trees wih queues
+# printing binary trees recursively ( in different orders)
+# practice methods for using the "parent" pointer in a tree node class to find common ancestors and such
+# hash tables
+# priority queue : basically have another element for priority in the node to sort the queue by
